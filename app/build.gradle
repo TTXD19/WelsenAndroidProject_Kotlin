@@ -1,9 +1,13 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
+    def globalConfig = rootProject.extensions.getByName("ext")
+
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -18,9 +22,18 @@ android {
     }
 
     buildTypes {
+        debug{
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        staging{
+
+        }
+        release{
+            
         }
     }
     compileOptions {
@@ -34,12 +47,97 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    /*implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'*/
+
+    def appDependencies = rootProject.ext.presentationDependencies
+    def appTestDependencies = rootProject.ext.presentationTestDependencies
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    coreLibraryDesugaring appDependencies.coreLibraryDesugar
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.kotlin
+    implementation appDependencies.androidxCore
+    implementation appDependencies.androidxFragmentKtx
+    implementation appDependencies.androidxAppCompat
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.materialDesign
+    implementation appDependencies.recyclerView
+    implementation appDependencies.viewPager2
+    implementation appDependencies.androidxLifecycleExt
+    implementation appDependencies.androidxViewmodel
+
+    //Hilt
+    implementation appDependencies.hilt
+    kapt appDependencies.hiltCompiler
+
+    //HiltViewModel
+    implementation appDependencies.hiltViewModel
+    kapt appDependencies.hiltViewModelCompiler
+
+    //Network
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofit_converter_gson
+    implementation dataDependencies.retrofit_rxJava3_adapter
+    implementation dataDependencies.gson
+    implementation dataDependencies.okhttpLoggingInterceptor
+
+    //RxJava
+    implementation appDependencies.rxJava
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.rxAndroid
+    //RxBinding
+    implementation appDependencies.rxBinding
+    implementation appDependencies.rxBindingCore
+    implementation appDependencies.rxBindingAppCompat
+    implementation appDependencies.rxBindingDrawerLayout
+    implementation appDependencies.rxBindingRecyclerView
+    implementation appDependencies.rxBindingSwipeRefreshLayout
+    implementation appDependencies.rxBindingViewPager2
+    implementation appDependencies.rxBindingMaterial
+    //RxPermission
+    implementation appDependencies.rxPermission
+
+    //Play Service
+    implementation appDependencies.googleLocation
+    implementation appDependencies.googleMaps
+    implementation appDependencies.safetyNet
+
+    //Firebase
+    implementation platform(appDependencies.firebase)
+    implementation appDependencies.analytics
+    implementation appDependencies.messaging
+
+    //Glide
+    implementation appDependencies.glide
+    kapt appDependencies.glideCompiler
+
+    //Timber
+    implementation appDependencies.timber
+
+
+    //Test
+
+    //Hilt
+    testImplementation appTestDependencies.hilt
+    kaptTest appTestDependencies.hiltCompiler
+    //HiltViewModel
+    testImplementation appTestDependencies.hiltViewModel
+    kaptTest appTestDependencies.hiltViewModelCompiler
+
+    testImplementation appTestDependencies.junit
+    testImplementation appTestDependencies.junitKotlin
+    testImplementation appTestDependencies.mockito
+    testImplementation appTestDependencies.mockitoKotlin
+    androidTestImplementation appTestDependencies.mockitoAndroid
+    androidTestImplementation appTestDependencies.testRunner
+    androidTestImplementation appTestDependencies.androidxTestExt
+    androidTestImplementation appTestDependencies.espresso
+    androidTestImplementation appTestDependencies.androidAnnotation
 }

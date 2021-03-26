@@ -1,0 +1,155 @@
+ext {
+    //Android
+    androidBuildToolsVersion = "29.0.2"
+    androidMinSdkVersion = 23
+    androidTargetSdkVersion = 30
+    androidCompileSdkVersion = 30
+
+    //Libraries
+    kotlinVersion = '1.4.21'
+    androidx = '1.2.0'
+    androidAnnotation = '1.1.0'
+    androidxCore = '1.3.2'
+    androidxFragmentKtx = '1.2.5'
+    androidxLifecycle = '2.2.0'
+    constraintLayout = '2.0.4'
+    materialDesign = '1.3.0-beta01'
+    recyclerView = '1.2.0-alpha5'
+    viewPager2 = '1.1.0-alpha01'
+    hilt = '2.30.1-alpha'
+    hiltViewModel = '1.0.0-alpha02'
+    rxJava = '3.0.3'
+    rxKotlin = '3.0.0'
+    rxAndroid = '3.0.0'
+    rxBinding = '4.0.0'
+    rxPermission = '0.12'
+    glide = '4.11.0'
+    timber = '4.7.1'
+    retrofit = '2.9.0'
+    retrofitRxJava3Adapter = '3.0.0'
+    gson = '2.8.6'
+    okhttp_logging_interceptor = '4.9.0'
+    facebook = '[4,5)'
+    firebase = '26.2.0'
+    coreLibraryDesugar = '1.0.9'
+
+    //Play Services
+    playService = '16.0.0'
+    androidAnnotationsVersion = '21.0.3'
+
+    //Testing
+    jUnit = '4.13.1'
+    jUnitKotlin = '1.4.21'
+    mockito = '3.3.3'
+    mockitoKotlin = '2.2.0'
+    mockitoAndroid = '3.3.3'
+    runner = '1.3.0'
+    androidxTestExt = '1.1.2'
+    espresso = '3.3.0'
+
+    domainDependencies = [
+            kotlin  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            rxJava  : "io.reactivex.rxjava3:rxjava:$rxJava",
+            rxKotlin: "io.reactivex.rxjava3:rxkotlin:$rxKotlin"
+    ]
+
+    domainTestDependencies = [
+            junit        : "junit:junit:$jUnit",
+            junitKotlin  : "org.jetbrains.kotlin:kotlin-test-junit:$jUnitKotlin",
+            mockito      : "org.mockito:mockito-core:$mockito",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin",
+    ]
+
+    presentationDependencies = [
+            kotlin                     : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            androidxCore               : "androidx.core:core-ktx:$androidxCore",
+            androidxFragmentKtx        : "androidx.fragment:fragment-ktx:$androidxFragmentKtx",
+            androidxAppCompat          : "androidx.appcompat:appcompat:$androidx",
+            materialDesign             : "com.google.android.material:material:$materialDesign",
+            constraintLayout           : "androidx.constraintlayout:constraintlayout:$constraintLayout",
+            recyclerView               : "androidx.recyclerview:recyclerview:$recyclerView",
+            viewPager2                 : "androidx.viewpager2:viewpager2:$viewPager2",
+            androidxLifecycleExt       : "androidx.lifecycle:lifecycle-extensions:$androidxLifecycle",
+            androidxViewmodel          : "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidxLifecycle",
+            hilt                       : "com.google.dagger:hilt-android:$hilt",
+            hiltCompiler               : "com.google.dagger:hilt-android-compiler:$hilt",
+            hiltViewModel              : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModel",
+            hiltViewModelCompiler      : "androidx.hilt:hilt-compiler:$hiltViewModel",
+            retrofit                   : "com.squareup.retrofit2:retrofit:$retrofit",
+            retrofit_converter_gson    : "com.squareup.retrofit2:converter-gson:$retrofit",
+            retrofit_rxJava3_adapter   : "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofitRxJava3Adapter",
+            gson                       : "com.google.code.gson:gson:$gson",
+            okhttpLoggingInterceptor   : "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor",
+            rxJava                     : "io.reactivex.rxjava3:rxjava:$rxJava",
+            rxKotlin                   : "io.reactivex.rxjava3:rxkotlin:$rxKotlin",
+            rxAndroid                  : "io.reactivex.rxjava3:rxandroid:$rxAndroid",
+            rxBinding                  : "com.jakewharton.rxbinding4:rxbinding:$rxBinding",
+            rxBindingCore              : "com.jakewharton.rxbinding4:rxbinding-core:$rxBinding",
+            rxBindingAppCompat         : "com.jakewharton.rxbinding4:rxbinding-appcompat:$rxBinding",
+            rxBindingDrawerLayout      : "com.jakewharton.rxbinding4:rxbinding-drawerlayout:$rxBinding",
+            rxBindingRecyclerView      : "com.jakewharton.rxbinding4:rxbinding-recyclerview:$rxBinding",
+            rxBindingSwipeRefreshLayout: "com.jakewharton.rxbinding4:rxbinding-swiperefreshlayout:$rxBinding",
+            rxBindingViewPager2        : "com.jakewharton.rxbinding4:rxbinding-viewpager2:$rxBinding",
+            rxBindingMaterial          : "com.jakewharton.rxbinding4:rxbinding-material:$rxBinding",
+            //"com.jakewharton.rxbinding4:rxbinding-viewpager:3.1.0"
+            rxPermission               : "com.github.tbruyelle:rxpermissions:$rxPermission",
+            glide                      : "com.github.bumptech.glide:glide:$glide",
+            glideCompiler              : "com.github.bumptech.glide:compiler:$glide",
+            timber                     : "com.jakewharton.timber:timber:$timber",
+            googleLocation             : "com.google.android.gms:play-services-location:$playService",
+            googleMaps                 : "com.google.android.gms:play-services-maps:$playService",
+            safetyNet                  : "com.google.android.gms:play-services-safetynet:$playService",
+            firebase                   : "com.google.firebase:firebase-bom:$firebase",
+            analytics                  : "com.google.firebase:firebase-analytics-ktx",
+            messaging                  : "com.google.firebase:firebase-messaging-ktx",
+            coreLibraryDesugar         : "com.android.tools:desugar_jdk_libs:$coreLibraryDesugar"
+    ]
+
+    presentationTestDependencies = [
+            hilt                 : "com.google.dagger:hilt-android:$hilt",
+            hiltCompiler         : "com.google.dagger:hilt-android-compiler:$hilt",
+            hiltViewModel        : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModel",
+            hiltViewModelCompiler: "androidx.hilt:hilt-compiler:$hiltViewModel",
+            junit                : "junit:junit:$jUnit",
+            junitKotlin          : "org.jetbrains.kotlin:kotlin-test-junit:$jUnitKotlin",
+            mockito              : "org.mockito:mockito-core:$mockito",
+            mockitoKotlin        : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin",
+            mockitoAndroid       : "org.mockito:mockito-android:$mockitoAndroid",
+            testRunner           : "androidx.test:runner:$runner",
+            androidxTestExt      : "androidx.test.ext:junit:$androidxTestExt",
+            espresso             : "androidx.test.espresso:espresso-core:$espresso",
+            androidAnnotation    : "androidx.annotation:annotation:$androidAnnotation"
+    ]
+
+    dataDependencies = [
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            androidxCore            : "androidx.core:core-ktx:$androidxCore",
+            androidxAppCompat       : "androidx.appcompat:appcompat:$androidx",
+            rxJava                  : "io.reactivex.rxjava3:rxjava:$rxJava",
+            rxKotlin                : "io.reactivex.rxjava3:rxkotlin:$rxKotlin",
+            hilt                    : "com.google.dagger:hilt-android:$hilt",
+            hiltCompiler            : "com.google.dagger:hilt-android-compiler:$hilt",
+            timber                  : "com.jakewharton.timber:timber:$timber",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofit",
+            retrofit_converter_gson : "com.squareup.retrofit2:converter-gson:$retrofit",
+            retrofit_rxJava3_adapter: "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofitRxJava3Adapter",
+            gson                    : "com.google.code.gson:gson:$gson",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor",
+            coreLibraryDesugar      : "com.android.tools:desugar_jdk_libs:$coreLibraryDesugar",
+            firebase                : "com.google.firebase:firebase-bom:$firebase",
+            analytics               : "com.google.firebase:firebase-analytics-ktx",
+            messaging               : "com.google.firebase:firebase-messaging-ktx"
+    ]
+
+    dataTestDependencies = [
+            junit            : "junit:junit:$jUnit",
+            junitKotlin      : "org.jetbrains.kotlin:kotlin-test-junit:$jUnitKotlin",
+            mockito          : "org.mockito:mockito-core:$mockito",
+            mockitoKotlin    : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin",
+            mockitoAndroid   : "org.mockito:mockito-android:$mockitoAndroid",
+            testRunner       : "androidx.test:runner:$runner",
+            androidxTestExt  : "androidx.test.ext:junit:$androidxTestExt",
+            espresso         : "androidx.test.espresso:espresso-core:$espresso",
+            androidAnnotation: "androidx.annotation:annotation:$androidAnnotation"
+    ]
+}
