@@ -12,7 +12,9 @@ import com.android.project.welsenandroidproject_kotlin.R
 import com.android.project.welsenandroidproject_kotlin.databinding.EventHistoryFragmentBinding
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseFragment
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EventHistoryFragment : BaseFragment<EventHistoryFragmentBinding>() {
 
 
