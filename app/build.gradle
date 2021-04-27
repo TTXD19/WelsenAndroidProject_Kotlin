@@ -22,17 +22,17 @@ android {
 
     buildTypes {
         debug{
-
+            buildConfigField("String", "BASE_URL", '"https://api.spacexdata.com/"')
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         staging{
-
+            buildConfigField("String", "BASE_URL", '"https://api.spacexdata.com/"')
         }
         release{
-
+            buildConfigField("String", "BASE_URL", '"https://api.spacexdata.com/"')
         }
     }
     compileOptions {
