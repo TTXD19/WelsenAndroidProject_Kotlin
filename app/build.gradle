@@ -60,6 +60,8 @@ dependencies {
 
     implementation project(':domain')
     implementation project(':data')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
 
     def appDependencies = rootProject.ext.presentationDependencies
     def appTestDependencies = rootProject.ext.presentationTestDependencies
