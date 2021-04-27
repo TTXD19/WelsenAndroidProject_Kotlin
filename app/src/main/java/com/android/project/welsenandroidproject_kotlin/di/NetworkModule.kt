@@ -1,5 +1,6 @@
 package com.android.project.welsenandroidproject_kotlin.di
 
+import com.android.project.data.data_source.history.HistoryApi
 import com.android.project.data.network.NetworkManager
 import com.android.project.welsenandroidproject_kotlin.BuildConfig
 import dagger.Module
@@ -59,5 +60,18 @@ object NetworkModule {
         retrofit: Retrofit
     ): NetworkManager {
         return NetworkManager(retrofit)
+    }
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object ApiModule {
+
+    @Singleton
+    @Provides
+    fun provideHistoryApi(
+        networkManager: NetworkManager
+    ): HistoryApi {
+        return networkManager.getApiService(HistoryApi::class.java)
     }
 }
