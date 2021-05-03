@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">WelsenAndroidProject_Kotlin</string>
+
+    <!--CommonText-->
+    <string name="history">歷史紀錄</string>
+    <string name="rocket">太空船歷史</string>
+    <string name="event">事件</string>
+    <string name="checkMore">查看更多</string>
+
+    <!--CommonError-->
+    <string name="server_error">維護中，請稍後再試</string>
 </resources>
