@@ -29,6 +29,11 @@ class HomePageActivity: BaseActivity<ActivityHomePageBinding>(){
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        binding.run {
+            addFragment(
+                R.id.fl_homePage_activity,
+                HomePageFragment()
+            ).safeCommit()
+        }
     }
 }

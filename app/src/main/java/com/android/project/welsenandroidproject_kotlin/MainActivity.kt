@@ -1,8 +1,10 @@
 package com.android.project.welsenandroidproject_kotlin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.android.project.welsenandroidproject_kotlin.databinding.ActivityMainBinding
+import com.android.project.welsenandroidproject_kotlin.ui.HomePageActivity
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseActivity
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,6 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        viewModel.getData()
+        val intent  = Intent(this, HomePageActivity::class.java)
+        startActivity(intent)
     }
 }

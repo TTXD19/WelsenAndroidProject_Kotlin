@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/abl_default"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:id="@+id/ctb_default"
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:minHeight="82dp"
+        app:collapsedTitleGravity="center"
+        app:collapsedTitleTextAppearance="@style/collapsingToolbarLayoutTitleColor"
+        app:expandedTitleGravity="start|center_vertical"
+        app:expandedTitleMarginBottom="44dp"
+        app:expandedTitleMarginStart="16dp"
+        app:expandedTitleTextAppearance="@style/collapsingToolbarLayoutTitleColor.Expand"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tb_default"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="42dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            tools:title="Title" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_tab"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom"
+            app:layout_collapseMode="pin"
+            app:tabIndicatorColor="@color/purple_700"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/purple_700"
+            app:tabTextAppearance="@style/collapsingToolbarLayoutTitleColor"
+            app:tabTextColor="@color/black" />
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+</com.google.android.material.appbar.AppBarLayout>
