@@ -1,4 +1,4 @@
 # WelsenAndroidProject_Kotlin
-Project show case
+Clean Code Architecture project show case
 
 Please swithch to branch CleanCodeArchi/spaceX_api_connect to see the full project 😁
