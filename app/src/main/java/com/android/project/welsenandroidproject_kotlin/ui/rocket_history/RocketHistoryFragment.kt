@@ -1,22 +1,18 @@
 package com.android.project.welsenandroidproject_kotlin.ui.rocket_history
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.project.welsenandroidproject_kotlin.R
-import com.android.project.welsenandroidproject_kotlin.databinding.RocketHistoryFragmentBinding
+import com.android.project.welsenandroidproject_kotlin.databinding.FragmentRocketHistoryBinding
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseFragment
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RocketHistoryFragment : BaseFragment<RocketHistoryFragmentBinding>(), RocketHistoryAdapter.Listener {
+class RocketHistoryFragment : BaseFragment<FragmentRocketHistoryBinding>(), RocketHistoryAdapter.Listener {
 
     private val viewModel: RocketHistoryViewModel by viewModels()
     private val adapter = RocketHistoryAdapter(this)
@@ -35,8 +31,8 @@ class RocketHistoryFragment : BaseFragment<RocketHistoryFragmentBinding>(), Rock
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): RocketHistoryFragmentBinding {
-        return RocketHistoryFragmentBinding.inflate(
+    ): FragmentRocketHistoryBinding {
+        return FragmentRocketHistoryBinding.inflate(
             inflater,
             container,
             false

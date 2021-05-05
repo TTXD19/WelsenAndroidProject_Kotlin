@@ -1,23 +1,18 @@
 package com.android.project.welsenandroidproject_kotlin.ui.event_history
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.project.welsenandroidproject_kotlin.R
-import com.android.project.welsenandroidproject_kotlin.databinding.EventHistoryFragmentBinding
+import com.android.project.welsenandroidproject_kotlin.databinding.FragmentEventHistoryBinding
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseFragment
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
-class EventHistoryFragment : BaseFragment<EventHistoryFragmentBinding>() {
+class EventHistoryFragment : BaseFragment<FragmentEventHistoryBinding>() {
 
 
     private val viewModel: EventHistoryViewModel by viewModels()
@@ -37,8 +32,8 @@ class EventHistoryFragment : BaseFragment<EventHistoryFragmentBinding>() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): EventHistoryFragmentBinding {
-        return EventHistoryFragmentBinding.inflate(
+    ): FragmentEventHistoryBinding {
+        return FragmentEventHistoryBinding.inflate(
             inflater, container, false
         )
     }
