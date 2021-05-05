@@ -11,7 +11,7 @@ import com.android.project.domain.entity.history.MassEntity
 import com.android.project.domain.entity.history.RocketHistoryEntity
 import javax.inject.Inject
 
-class HistoryMapper @Inject constructor() : Mapper<RocketHistoryEntity, RocketHistoryResp> {
+class RocketHistoryMapper @Inject constructor() : Mapper<RocketHistoryEntity, RocketHistoryResp> {
     override fun toDto(entity: RocketHistoryEntity?): RocketHistoryResp {
         if (entity == null) {
             return RocketHistoryResp()
