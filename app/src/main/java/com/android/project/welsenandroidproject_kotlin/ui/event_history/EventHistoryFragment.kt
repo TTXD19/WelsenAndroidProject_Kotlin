@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.project.welsenandroidproject_kotlin.databinding.FragmentEventHistoryBinding
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseFragment
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
+import com.android.project.welsenandroidproject_kotlin.ui.base.ViewEvent
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class EventHistoryFragment : BaseFragment<FragmentEventHistoryBinding>() {
@@ -44,6 +46,16 @@ class EventHistoryFragment : BaseFragment<FragmentEventHistoryBinding>() {
             binding?.rvEventHistory?.adapter = adapter
             binding?.rvEventHistory?.layoutManager = LinearLayoutManager(this.context)
             adapter.submitList(it)
+        }
+    }
+
+
+    override fun handleViewEvent(event: ViewEvent) {
+        super.handleViewEvent(event)
+        when(event){
+            is ViewEvent.Done -> {
+                Timber.tag("ViewEvent").d("Done2")
+            }
         }
     }
 

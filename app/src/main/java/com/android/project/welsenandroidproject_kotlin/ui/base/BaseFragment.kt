@@ -1,12 +1,16 @@
 package com.android.project.welsenandroidproject_kotlin.ui.base
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.viewbinding.ViewBinding
@@ -15,7 +19,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import timber.log.Timber
 
-abstract class BaseFragment<VB: ViewBinding>: Fragment(){
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     var binding: VB? = null
 
@@ -46,6 +50,7 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         toolbar = view.findViewById<MaterialToolbar>(R.id.tb_default)
+        viewCompositeDisposable.add(getViewModel()?.subscribeViewEvent(this::handleViewEvent))
         initView(savedInstanceState)
     }
 
@@ -58,7 +63,22 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment(){
     override fun onDestroy() {
         viewCompositeDisposable.dispose()
         compositeDisposable.dispose()
+        getViewModel()?.resetViewEventPublisher()
         super.onDestroy()
+    }
+
+    protected open fun handleViewEvent(event: ViewEvent) {
+        when (event) {
+            is ViewEvent.Loading -> {
+                Timber.tag("ViewEvent").d("Loading")
+            }
+            is ViewEvent.Done -> {
+                Timber.tag("ViewEvent").d("Done")
+            }
+            else -> {
+                Timber.tag("ViewEvent").d("Error")
+            }
+        }
     }
 
     protected fun popFragment(name: String? = null, include: Boolean = false): Boolean {
@@ -80,7 +100,7 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment(){
         title: String? = "default"
     ) {
         (activity as AppCompatActivity).run {
-            if (toolbar != null){
+            if (toolbar != null) {
                 setSupportActionBar(toolbar)
             }
             val actionBarTitle = when {

@@ -17,7 +17,10 @@ class EventHistoryViewModel @ViewModelInject constructor(
     val history = MutableLiveData<List<EventHistoryEntity>>()
 
     fun getEventHistory(){
-        getEventHistoryUseCase().subscribeBy {
+       /* getEventHistoryUseCase().subscribeBy {
+            history.postValue(it)
+        }*/
+        getEventHistoryUseCase().sub {
             history.postValue(it)
         }
     }
