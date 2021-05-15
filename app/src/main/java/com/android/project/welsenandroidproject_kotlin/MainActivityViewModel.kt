@@ -15,8 +15,11 @@ class MainActivityViewModel @ViewModelInject constructor(
     savedStateHandle
 ) {
     fun getData(){
-        getRocketHistoryUseCase().subscribeBy {
+        /*getRocketHistoryUseCase().subscribeBy {
             Timber.tag("DataResult").d(it[0].company)
+        }*/
+        getRocketHistoryUseCase().sub {
+            Timber.tag("DataResult").d(it?.get(0)?.company)
         }
     }
 }

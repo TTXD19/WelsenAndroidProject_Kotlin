@@ -6,6 +6,7 @@ sealed class ViewEvent {
     object Done : ViewEvent()
 
     object SignOut : ViewEvent()
+    data class Error(val message: String) : ViewEvent()
     data class UnknownError(val error: Throwable?) : ViewEvent()
     object None : ViewEvent()
 

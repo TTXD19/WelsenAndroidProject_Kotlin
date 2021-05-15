@@ -18,7 +18,10 @@ class RocketHistoryViewModel @ViewModelInject constructor(
 
 
     fun  getRocketHistory(){
-        rocketHistoryUseCase().subscribeBy {
+        /*rocketHistoryUseCase().subscribeBy {
+            rocketHistory.postValue(it)
+        }*/
+        rocketHistoryUseCase().sub {
             rocketHistory.postValue(it)
         }
     }

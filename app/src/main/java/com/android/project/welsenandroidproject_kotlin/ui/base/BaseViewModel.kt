@@ -2,6 +2,7 @@ package com.android.project.welsenandroidproject_kotlin.ui.base
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.android.project.domain.repository.DataResult
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -38,13 +39,18 @@ open class BaseViewModel(
         compositeDisposable.dispose()
     }
 
-    fun <T> Single<T>.sub(
+    fun <T> Single<DataResult<T>>.sub(
         onSuccess: (T?) -> Unit = {}
     ): Disposable {
         return subscribe { result, throwable ->
+            //val error = throwable ?: (result as? DataResult.Failure<T>)?.errorMessage
             viewEventPublisher.onNext(ViewEvent.Loading)
-            onSuccess(result)
-            viewEventPublisher.onNext(ViewEvent.Done)
+            if (result is DataResult.Success<T>) {
+                onSuccess(result.data)
+                viewEventPublisher.onNext(ViewEvent.Done)
+            } else if (result is DataResult.Failure<T>) {
+                viewEventPublisher.onNext(ViewEvent.Error(result.errorMessage))
+            }
         }
     }
 
