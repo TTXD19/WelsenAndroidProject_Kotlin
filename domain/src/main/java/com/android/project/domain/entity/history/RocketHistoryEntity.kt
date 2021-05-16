@@ -12,7 +12,8 @@ data class RocketHistoryEntity(
     val description: String? = null,
     val id: String? = null,
     val legacy_id: String? = null,
-    val first_flight: String? = null
+    val first_flight: String? = null,
+    val flickr_images: List<String>? = null
 )
 
 data class HeightEntity(

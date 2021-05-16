@@ -38,6 +38,7 @@ class RocketHistoryMapper @Inject constructor() : Mapper<RocketHistoryEntity, Ro
             id = entity.id,
             legacy_id = entity.legacy_id,
             first_flight = entity.first_flight,
+            flickr_images = entity.flickr_images
         )
     }
 
@@ -67,6 +68,7 @@ class RocketHistoryMapper @Inject constructor() : Mapper<RocketHistoryEntity, Ro
             id = dto.id,
             legacy_id = dto.legacy_id,
             first_flight = dto.first_flight,
+            flickr_images = dto.flickr_images
         )
     }
 }

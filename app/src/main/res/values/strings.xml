@@ -13,4 +13,5 @@
     <string name="server_error">維護中，請稍後再試</string>
 
     <!--RocketDetail-->
+    <string name="ship_spec">火箭資料</string>
 </resources>

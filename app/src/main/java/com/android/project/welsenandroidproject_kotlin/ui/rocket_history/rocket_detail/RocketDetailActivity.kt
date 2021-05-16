@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RocketDetailActivity : BaseActivity<ActivityRocketDetailBinding>() {
 
-    private val viewModel: RocketDetailViewModel by viewModels()
+    private val activityViewModel: RocketDetailActivityViewModel by viewModels()
 
     override fun initViewBinding(): ActivityRocketDetailBinding {
         return ActivityRocketDetailBinding.inflate(
@@ -21,7 +21,7 @@ class RocketDetailActivity : BaseActivity<ActivityRocketDetailBinding>() {
 
     override fun getLayoutId(): Int = R.layout.activity_rocket_detail
 
-    override fun getViewModel(): BaseViewModel? = viewModel
+    override fun getViewModel(): BaseViewModel? = activityViewModel
 
     override fun initParam(data: Bundle) {
 

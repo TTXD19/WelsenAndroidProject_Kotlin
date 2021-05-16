@@ -47,7 +47,7 @@ class RocketHistoryAdapter (
         }
 
         holder.btnCheckMore.setOnClickListener {
-            listener.onClick()
+            listener.onClick(data)
         }
     }
 
@@ -63,7 +63,7 @@ class RocketHistoryAdapter (
     }
 
     interface Listener{
-        fun onClick()
+        fun onClick(rocketHistoryEntity: RocketHistoryEntity)
     }
 }
 
