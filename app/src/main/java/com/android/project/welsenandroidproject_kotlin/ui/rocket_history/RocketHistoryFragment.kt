@@ -1,6 +1,7 @@
 package com.android.project.welsenandroidproject_kotlin.ui.rocket_history
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.project.welsenandroidproject_kotlin.databinding.FragmentRocketHistoryBinding
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseFragment
 import com.android.project.welsenandroidproject_kotlin.ui.base.BaseViewModel
+import com.android.project.welsenandroidproject_kotlin.ui.rocket_history.rocket_detail.RocketDetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -51,6 +53,8 @@ class RocketHistoryFragment : BaseFragment<FragmentRocketHistoryBinding>(), Rock
 
     override fun onClick() {
 
+        val intent = Intent(this.context, RocketDetailActivity::class.java)
+        startActivity(intent)
     }
 
 }

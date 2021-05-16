@@ -6,7 +6,11 @@
     <string name="rocket">太空船歷史</string>
     <string name="event">事件</string>
     <string name="checkMore">查看更多</string>
+    <string name="summary">簡介</string>
+    <string name="description">詳細資訊</string>
 
     <!--CommonError-->
     <string name="server_error">維護中，請稍後再試</string>
+
+    <!--RocketDetail-->
 </resources>

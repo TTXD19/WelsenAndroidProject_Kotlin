@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.HomePageActivity"/>
+        <activity android:name=".ui.rocket_history.rocket_detail.RocketDetailActivity"/>
     </application>
 
 </manifest>

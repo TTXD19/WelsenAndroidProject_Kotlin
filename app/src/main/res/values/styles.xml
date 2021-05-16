@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="collapsingToolbarLayoutTitleColor" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="collapsingToolbarLayoutTitleColor.Expand" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="spaceX_text_style.H5" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="spaceX_text_style.H4" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="spaceX_text_style.H3" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="spaceX_text_style.H2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="spaceX_text_style.H1" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
